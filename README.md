@@ -11,6 +11,7 @@ Chào mừng bạn đến với kho lưu trữ các kỹ năng (Skills) dành ch
 - **[Image Generation](image-gen/SKILL.md)**: Tạo và chỉnh sửa hình ảnh chuyên nghiệp.
 - **[Skill Creator](skill-creator/SKILL.md)**: Công cụ hỗ trợ tạo và đóng gói các kỹ năng mới.
 - **[Skill Manager](skill-manager/SKILL.md)**: Đồng bộ kỹ năng vào các IDE và Agent (Cursor, Trae, v.v.).
+- **[Conventional Commits Compliance](conventional-commits-compliance/SKILL.md)**: Tuân thủ chuẩn Conventional Commits cho lịch sử dự án chuyên nghiệp.
 - **[GitHub Actions Automation](github-actions-automation/SKILL.md)**: Thiết kế và triển khai luồng tự động hóa CI/CD mạnh mẽ.
 - **[Agent Guide](AGENTS.md)**: Hướng dẫn dành cho AI Agent cách sử dụng và đóng góp vào kho lưu trữ này.
 
