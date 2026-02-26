@@ -1,0 +1,29 @@
+name: Cập nhật thời gian cuối
+
+on:
+  push:
+    branches:
+      - master
+      - main
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Update Last Updated Date
+        run: |
+          # Lấy ngày hiện tại theo định dạng YYYY-MM-DD
+          CURRENT_DATE=$(date +'%Y-%m-%d')
+          # Thay thế dòng ngày cập nhật trong README.md
+          sed -i "s/Dự án được cập nhật lần cuối vào: \*\*[0-9]\{4\}-[0-9]\{2\}-[0-9]\{2\}\*\*/Dự án được cập nhật lần cuối vào: **$CURRENT_DATE**/" README.md
+
+      - name: Commit changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add README.md
+          git diff --quiet && git diff --staged --quiet || git commit -m "docs: cập nhật thời gian cuối trong README"
+          git push
