@@ -50,8 +50,8 @@ Nếu bạn đã tải script hoặc clone repo, hãy sử dụng:
 
 Dưới đây là những người đã đóng góp công sức để xây dựng dự án này:
 
-<!-- CONTRIBUTOR_LIST:START -->
-<!-- CONTRIBUTOR_LIST:END -->
+<!-- readme: contributors -start -->
+<!-- readme: contributors -end -->
 
 *(Danh sách này được cập nhật tự động bởi GitHub Action)*
 

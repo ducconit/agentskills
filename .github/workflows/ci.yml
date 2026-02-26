@@ -3,7 +3,6 @@ name: CI & Documentation Update
 on:
   push:
     branches:
-      - master
       - main
 
 concurrency:
@@ -15,6 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      pull-requests: write
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -22,13 +22,14 @@ jobs:
           fetch-depth: 0
 
       - name: Update Contributors List
-        uses: akhilmhdh/contributors-readme-action@v2.3.6
+        uses: akhilmhdh/contributors-readme-action@v2.3.11
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          image_size: 64
-          # We will handle the commit and push manually to be sure
-          auto_commit: false
+          image_size: 100
+          columns_per_row: 6
+          use_username: false
+          commit_message: "docs: update list of contributors"
 
       - name: Update Last Updated Date
         run: |
@@ -40,5 +41,7 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add README.md
-          git diff --quiet && git diff --staged --quiet || git commit -m "docs: cập nhật danh sách đóng góp và thời gian cuối"
-          git push
+          if ! git diff --quiet HEAD -- README.md; then
+            git commit -m "docs: cập nhật thời gian cuối"
+            git push
+          fi
