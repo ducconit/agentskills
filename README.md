@@ -59,3 +59,6 @@ Dưới đây là những người đã đóng góp công sức để xây dựn
 Nếu bạn thấy dự án này hữu ích, bạn có thể mời tôi một ly cà phê qua mã QR dưới đây:
 
 <img src="https://github.com/ducconit/ducconit/blob/master/assets/qr/mono.jpg?raw=true" width="150" alt="Donate QR Code" />
+
+## 📅 Cập nhật lần cuối
+Dự án được cập nhật lần cuối vào: **2026-02-27**
