@@ -62,4 +62,4 @@ Nếu bạn thấy dự án này hữu ích, bạn có thể mời tôi một ly
 <img src="https://github.com/ducconit/ducconit/blob/master/assets/qr/mono.jpg?raw=true" width="150" alt="Donate QR Code" />
 
 ## 📅 Cập nhật lần cuối
-Dự án được cập nhật lần cuối vào: **2026-02-26**
+Dự án được cập nhật lần cuối vào: **2026-02-26 (UTC+7)**
