@@ -1,5 +1,6 @@
 ---
 name: conventional-commits-compliance
+version: 1.0.0
 description: Agent capable of analyzing source code changes and crafting professional commit messages that adhere to the Conventional Commits 1.0.0 specification.
 ---
 

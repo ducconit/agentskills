@@ -1,5 +1,6 @@
 ---
 name: image-gen
+version: 1.0.0
 description: Professional image generation & editing using Google's NEW Gen AI SDK (google-genai). Supports text-to-image and image-to-image (editing). Features 1K/2K/4K resolutions, multi-image input, and batch generation.
 ---
 

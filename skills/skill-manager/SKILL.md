@@ -1,6 +1,7 @@
 ---
 name: skill-manager
-description: Agent can update and synchronize skills from this repository to various IDEs (Cursor, Trae, Windsurf) and AI Agents using the agentskills.sh script.
+version: 1.0.0
+description: Agent can update and synchronize skills from this repository to various IDEs (Cursor, Trae, Windsurf) and AI Agents using the `@ducconit/agentskills` CLI via `npx`.
 ---
 
 # Skill Manager
@@ -11,43 +12,42 @@ The Skill Manager allows an AI Agent to synchronize the latest skills from this 
 
 ## Supported IDEs & Agents
 
-By default, this skill supports the following conventions:
+By default, this skill supports the following conventions for installation directories:
 
-1. **Trae**: `agentskills.sh .trae/skills`
-2. **Cursor**: `agentskills.sh .cursor/skills`
-3. **Windsurf**: `agentskills.sh .windsurf/skills`
-4. **Anigravity**: `agentskills.sh .agent/skills`
-5. **OpenClaw**: `agentskills.sh .openclaw/skills`
+1. **Trae**: `.trae/skills`
+2. **Cursor**: `.cursor/skills`
+3. **Windsurf**: `.windsurf/skills`
+4. **General/Generic**: `.agent/skills`
 
 ## How it Works
 
-The Agent uses the `agentskills.sh` script to perform a synchronization. The script copies all skill directories while automatically excluding repository-specific files like `.github`, `README.md`, `AGENTS.md`, and the script itself.
+The Agent uses the `@ducconit/agentskills` CLI (via `npx`) to perform management tasks.
 
-### Key Features:
-- **Online/Offline Flexibility**: Run directly from GitHub via `curl` (online) or install the script locally using `--include-script` (offline).
-- **List Available Skills**: View all skills on GitHub using `--list` or `-l`.
-- **Selective Installation**: Install specific skills using `--skills skill1,skill2`.
-- **Automatic Exclusions**: Keeps target directories clean by excluding metadata files (unless explicitly requested).
-- **Directory Creation**: Automatically creates target directories if they don't exist.
-- **Efficient Sync**: Uses `rsync` if available for incremental updates.
+### Key Commands:
+- **`init`**: Install skills to a target directory.
+  - `-f, --force`: Overwrite existing skills.
+  - `--clean`: Clear target directory before installing.
+  - `--skills <list>`: Install specific skills (comma-separated).
+- **`list`**: View available skills.
+  - `--local`: View skills already installed in the project.
+  - `--diff`: See which skills are available on cloud but not yet installed locally.
+- **`update`**: Update outdated skills.
+  - `--outdate`: List skills that have a newer version on cloud.
+- **`clear`**: Remove all installed skills from the target directory.
 
 ## Workflow
 
-1. **Identify Target**: Determine the IDE or Agent environment being used.
-2. **Explore Skills**: Use `./agentskills.sh --list` to see what's available.
-3. **Choose Mode**: Decide whether to sync everything or just specific skills.
-4. **Execute Sync**: Run the `./agentskills.sh <target_directory> [--skills <list>]` command.
-5. **Verify**: Ensure the skills are correctly copied to the destination.
+1. **Identify Target**: Determine the IDE or Agent environment being used (e.g., Trae).
+2. **Explore Skills**: Run `npx -y @ducconit/agentskills list` to see what's available.
+3. **Initialize/Install**: Run `npx -y @ducconit/agentskills init <target_directory>` (e.g., `init .trae/skills`).
+4. **Maintain**: Periodically check for updates using `npx -y @ducconit/agentskills update --outdate`.
+5. **Clean Up**: Use `clear` if you need to remove the installed skills.
 
 ## Usage Guide
 
-To update your current environment's skills, ask the Agent:
-- **Online (No clone needed)**: `curl -s https://raw.githubusercontent.com/ducconit/agentskills/main/agentskills.sh | bash -s -- .cursor/skills`
-- **Enable Offline Use**: `curl -s https://raw.githubusercontent.com/ducconit/agentskills/main/agentskills.sh | bash -s -- .cursor/skills --include-script`
-- **List Skills**: `bash agentskills.sh --list`
-- **Selective Install**: `bash agentskills.sh .trae/skills --skills image-gen`
-
-## Resources
-
-### scripts/
-- [agentskills.sh](../agentskills.sh): The main synchronization script located at the root of the repository.
+To manage your current environment's skills, ask the Agent:
+- **Install all skills**: `npx -y @ducconit/agentskills init`
+- **Check for updates**: `npx -y @ducconit/agentskills update --outdate`
+- **Update everything**: `npx -y @ducconit/agentskills update`
+- **Selective Install**: `npx -y @ducconit/agentskills init .trae/skills --skills image-gen`
+- **View diff**: `npx -y @ducconit/agentskills list --diff`

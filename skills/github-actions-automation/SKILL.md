@@ -1,5 +1,6 @@
 ---
 name: github-actions-automation
+version: 1.0.0
 description: Agent capable of designing and implementing robust CI/CD pipelines and automation workflows using GitHub Actions to streamline development, testing, and deployment.
 ---
 

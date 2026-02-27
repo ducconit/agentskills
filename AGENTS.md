@@ -4,70 +4,73 @@ Hello, fellow AI Agent! This repository is designed to empower you with speciali
 
 ## 🛠 How to Use This Repository
 
-You can run the management script directly from GitHub or from a local clone.
+The recommended way to manage skills is using the `@ducconit/agentskills` CLI via `npx`.
 
-### 0. Online Execution (No setup required)
-Execute directly from GitHub. This is the fastest way to get started:
+### 1. Install Skills
+You can install all skills or specific ones into your environment (Trae, Cursor, Windsurf, etc.).
+
 ```bash
-curl -s https://raw.githubusercontent.com/ducconit/agentskills/main/agentskills.sh | bash -s -- <target_directory> [options]
+# Install all skills into .agent/skills (default)
+npx -y @ducconit/agentskills init
+
+# Install into specific IDE directory
+npx -y @ducconit/agentskills init .trae/skills
 ```
 
-### 0.1 Offline Execution (Optional)
-If you prefer to have the script available locally for offline use, add the `--include-script` flag during your first run:
-```bash
-curl -s https://raw.githubusercontent.com/ducconit/agentskills/main/agentskills.sh | bash -s -- .agent/skills --include-script
-```
-Now you can use the local script:
-```bash
-bash .agent/skills/agentskills.sh .agent/skills --skills image-gen
-```
+### 2. Manage Skills
+Use the CLI to keep your skills up to date or explore available ones.
 
-### 1. Explore Available Skills
-To see what's available (works with local script):
 ```bash
-bash agentskills.sh --list
-```
+# List available skills on cloud
+npx -y @ducconit/agentskills list
 
-### 2. Synchronize Skills to Your Environment
-Depending on the IDE or environment you are running in, sync the skills to your local configuration directory:
-- **Trae**: `bash agentskills.sh .trae/skills`
-- **Cursor**: `bash agentskills.sh .cursor/skills`
-- **Windsurf**: `bash agentskills.sh .windsurf/skills`
-- **General/Generic**: `bash agentskills.sh .agent/skills`
+# List installed skills locally
+npx -y @ducconit/agentskills list --local
+
+# Check for outdated skills
+npx -y @ducconit/agentskills update --outdate
+
+# Update all installed skills
+npx -y @ducconit/agentskills update
+
+# Clear all installed skills
+npx -y @ducconit/agentskills clear
+```
 
 ### 3. Selective Installation
-If you only need specific skills to keep your context window lean:
+To keep your context window lean, install only what you need:
 ```bash
-bash agentskills.sh .cursor/skills --skills image-gen,deep-codebase-analysis
+npx -y @ducconit/agentskills init .cursor/skills --skills image-gen,deep-codebase-analysis
 ```
 
 ---
 
 ## 🤝 How to Contribute
 
-We encourage you to create new skills or improve existing ones. Here is the standard procedure:
+We encourage you to create new skills or improve existing ones.
 
 ### 1. Initialize a New Skill
-Use the [skill-creator](file:///f:/projects/agents/agentskills/skill-creator/SKILL.md) tool to scaffold a new skill:
+Use the [skill-creator](file:///f:/projects/agents/agentskills/skills/skill-creator/SKILL.md) tool to scaffold a new skill:
 ```bash
-python skill-creator/scripts/init_skill.py <your-skill-name> --path . --resources scripts,references
+# Run the init script from the skills directory
+python skills/skill-creator/scripts/init_skill.py <your-skill-name> --path skills/ --resources scripts,references
 ```
 
 ### 2. Structure Your Skill
-Follow the [Progressive Disclosure](file:///f:/projects/agents/agentskills/skill-creator/SKILL.md#progressive-disclosure-design-principle) principle:
-- **SKILL.md**: Keep it concise. Use it for high-level guidance and workflows.
+Follow the [Progressive Disclosure](file:///f:/projects/agents/agentskills/skills/skill-creator/SKILL.md#progressive-disclosure-design-principle) principle:
+- **SKILL.md**: Keep it concise. Use it for high-level guidance and workflows. Include a `version` field in frontmatter.
 - **references/**: Put detailed documentation, API specs, or patterns here.
 - **scripts/**: Add executable helpers (Python/Bash) for deterministic tasks.
 
 ### 3. Conventions
 - **Naming**: Use `kebab-case` for skill names (e.g., `my-cool-skill`).
-- **Language**: Use English for technical documentation and code. If the user request is in another language (e.g., Vietnamese), ensure the `SKILL.md` description reflects its capabilities clearly.
-- **Metadata**: Every `SKILL.md` MUST have YAML frontmatter with `name` and `description`.
+- **Language**: Use English for technical documentation and code.
+- **Metadata**: Every `SKILL.md` MUST have YAML frontmatter with `name`, `version`, and `description`.
 
 ### 4. Validation
 Before committing, validate your skill structure:
 ```bash
-python skill-creator/scripts/quick_validate.py <your-skill-name>
+python skills/skill-creator/scripts/quick_validate.py <your-skill-name>
 ```
 
 ### 5. Update Documentation

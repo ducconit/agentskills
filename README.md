@@ -15,22 +15,51 @@ Chào mừng bạn đến với kho lưu trữ các kỹ năng (Skills) dành ch
 - **[GitHub Actions Automation](skills/github-actions-automation/SKILL.md)**: Thiết kế và triển khai luồng tự động hóa CI/CD mạnh mẽ.
 - **[Agent Guide](AGENTS.md)**: Hướng dẫn dành cho AI Agent cách sử dụng và đóng góp vào kho lưu trữ này.
 
-## ⚙️ Cài đặt nhanh (Quick Install)
+## ⚙️ Hướng dẫn sử dụng CLI
 
-Cách nhanh nhất để cài đặt các kỹ năng vào dự án của bạn là sử dụng `npx`:
+Sử dụng `npx` để quản lý các kỹ năng một cách dễ dàng:
 
-### 1. Sử dụng NPX (Khuyên dùng)
+### 1. Cài đặt (init)
 ```bash
-# Cài đặt tất cả kỹ năng vào thư mục .agent/skills (mặc định)
+# Cài đặt tất cả kỹ năng (mặc định vào .agent/skills)
 npx -y @ducconit/agentskills init
 
-# Cài đặt vào thư mục cụ thể cho từng IDE
+# Cài đặt vào thư mục cụ thể
 npx -y @ducconit/agentskills init .trae/skills
-npx -y @ducconit/agentskills init .cursor/skills
-npx -y @ducconit/agentskills init .windsurf/skills
 
-# Chỉ cài đặt các kỹ năng cụ thể
-npx -y @ducconit/agentskills init .agent/skills --skills image-gen,deep-codebase-analysis
+# Chỉ cài đặt một số kỹ năng
+npx -y @ducconit/agentskills init --skills weather,image-gen
+
+# Ghi đè (-f) hoặc xóa sạch trước khi cài (--clean)
+npx -y @ducconit/agentskills init -f
+npx -y @ducconit/agentskills init --clean
+```
+
+### 2. Cập nhật (update)
+```bash
+# Kiểm tra các kỹ năng bị cũ (outdated)
+npx -y @ducconit/agentskills update --outdate
+
+# Cập nhật tất cả các kỹ năng đã cài đặt lên bản mới nhất
+npx -y @ducconit/agentskills update
+```
+
+### 3. Danh sách (list)
+```bash
+# Xem tất cả kỹ năng có sẵn trên cloud
+npx -y @ducconit/agentskills list
+
+# Xem các kỹ năng đã cài đặt tại local
+npx -y @ducconit/agentskills list --local
+
+# Xem các kỹ năng chưa được cài đặt
+npx -y @ducconit/agentskills list --diff
+```
+
+### 4. Gỡ bỏ (clear)
+```bash
+# Xóa tất cả các kỹ năng đã cài đặt trong thư mục
+npx -y @ducconit/agentskills clear
 ```
 
 Dưới đây là những người đã đóng góp công sức để xây dựng dự án này:

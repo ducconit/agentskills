@@ -1,5 +1,6 @@
 ---
 name: design-pattern-application
+version: 1.0.0
 description: Agent capable of analyzing software design problems to select and apply the most appropriate design patterns (Creational, Structural, Behavioral) for optimal solutions. Supports code refactoring and design decision reporting.
 ---
 

@@ -1,5 +1,6 @@
 ---
 name: deep-codebase-analysis
+version: 1.0.0
 description: Agent capable of reading and analyzing the entire source code of a software project to gain a thorough understanding of architecture, communication, design patterns, and business flows. Use when exploring new systems, maintenance, or refactoring.
 ---
 
