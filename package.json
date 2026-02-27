@@ -1,0 +1,43 @@
+{
+  "name": "@ducconit/agentskills",
+  "version": "1.0.0",
+  "description": "Collection of specialized skills for AI Agents",
+  "main": "index.js",
+  "bin": {
+    "agentskills": "./bin/cli.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ducconit/agentskills.git"
+  },
+  "keywords": [
+    "ai",
+    "agent",
+    "skills",
+    "trae",
+    "cursor",
+    "windsurf",
+    "automation"
+  ],
+  "author": "ducconit",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ducconit/agentskills/issues"
+  },
+  "homepage": "https://github.com/ducconit/agentskills#readme",
+  "dependencies": {
+    "commander": "^11.1.0",
+    "fs-extra": "^11.2.0",
+    "chalk": "^4.1.2",
+    "path": "^0.12.7"
+  },
+  "files": [
+    "bin",
+    "skills",
+    "README.md",
+    "AGENTS.md"
+  ]
+}

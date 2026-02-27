@@ -6,46 +6,31 @@ Chào mừng bạn đến với kho lưu trữ các kỹ năng (Skills) dành ch
 
 ## 🚀 Các kỹ năng hiện có
 
-- **[Deep Codebase Analysis](deep-codebase-analysis/SKILL.md)**: Phân tích sâu mã nguồn, hiểu kiến trúc và luồng dữ liệu.
-- **[Design Pattern Application](design-pattern-application/SKILL.md)**: Áp dụng các mẫu thiết kế tối ưu cho bài toán phần mềm.
-- **[Image Generation](image-gen/SKILL.md)**: Tạo và chỉnh sửa hình ảnh chuyên nghiệp.
-- **[Skill Creator](skill-creator/SKILL.md)**: Công cụ hỗ trợ tạo và đóng gói các kỹ năng mới.
-- **[Skill Manager](skill-manager/SKILL.md)**: Đồng bộ kỹ năng vào các IDE và Agent (Cursor, Trae, v.v.).
-- **[Conventional Commits Compliance](conventional-commits-compliance/SKILL.md)**: Tuân thủ chuẩn Conventional Commits cho lịch sử dự án chuyên nghiệp.
-- **[GitHub Actions Automation](github-actions-automation/SKILL.md)**: Thiết kế và triển khai luồng tự động hóa CI/CD mạnh mẽ.
+- **[Deep Codebase Analysis](skills/deep-codebase-analysis/SKILL.md)**: Phân tích sâu mã nguồn, hiểu kiến trúc và luồng dữ liệu.
+- **[Design Pattern Application](skills/design-pattern-application/SKILL.md)**: Áp dụng các mẫu thiết kế tối ưu cho bài toán phần mềm.
+- **[Image Generation](skills/image-gen/SKILL.md)**: Tạo và chỉnh sửa hình ảnh chuyên nghiệp.
+- **[Skill Creator](skills/skill-creator/SKILL.md)**: Công cụ hỗ trợ tạo và đóng gói các kỹ năng mới.
+- **[Skill Manager](skills/skill-manager/SKILL.md)**: Đồng bộ kỹ năng vào các IDE và Agent (Cursor, Trae, v.v.).
+- **[Conventional Commits Compliance](skills/conventional-commits-compliance/SKILL.md)**: Tuân thủ chuẩn Conventional Commits cho lịch sử dự án chuyên nghiệp.
+- **[GitHub Actions Automation](skills/github-actions-automation/SKILL.md)**: Thiết kế và triển khai luồng tự động hóa CI/CD mạnh mẽ.
 - **[Agent Guide](AGENTS.md)**: Hướng dẫn dành cho AI Agent cách sử dụng và đóng góp vào kho lưu trữ này.
 
 ## ⚙️ Cài đặt nhanh (Quick Install)
 
-Bạn có thể chạy trực tiếp script cài đặt qua URL hoặc tải về máy:
+Cách nhanh nhất để cài đặt các kỹ năng vào dự án của bạn là sử dụng `npx`:
 
-### 1. Chạy trực tiếp qua Bash (Online)
+### 1. Sử dụng NPX (Khuyên dùng)
 ```bash
-# Cài đặt kỹ năng (mặc định không tải script agentskills.sh)
-curl -s https://raw.githubusercontent.com/ducconit/agentskills/main/agentskills.sh | bash -s -- .trae/skills
+# Cài đặt tất cả kỹ năng vào thư mục .agent/skills (mặc định)
+npx -y @ducconit/agentskills init
 
-# Cài đặt kèm script để sử dụng Offline sau này
-curl -s https://raw.githubusercontent.com/ducconit/agentskills/main/agentskills.sh | bash -s -- .trae/skills --include-script
-```
-*(Thay `.trae/skills` bằng thư mục mục tiêu của bạn)*
+# Cài đặt vào thư mục cụ thể cho từng IDE
+npx -y @ducconit/agentskills init .trae/skills
+npx -y @ducconit/agentskills init .cursor/skills
+npx -y @ducconit/agentskills init .windsurf/skills
 
-### 2. Sử dụng Offline (Nếu đã tải script)
-Nếu bạn đã tải script hoặc clone repo, hãy sử dụng:
-```bash
-# Cho Trae
-./agentskills.sh .trae/skills
-
-# Cho Cursor
-./agentskills.sh .cursor/skills
-
-# Cho Windsurf
-./agentskills.sh .windsurf/skills
-
-# Liệt kê danh sách kỹ năng trên GitHub
-./agentskills.sh --list
-
-# Cài đặt có chọn lọc (Selective Install)
-./agentskills.sh .cursor/skills --skills image-gen,deep-codebase-analysis
+# Chỉ cài đặt các kỹ năng cụ thể
+npx -y @ducconit/agentskills init .agent/skills --skills image-gen,deep-codebase-analysis
 ```
 
 Dưới đây là những người đã đóng góp công sức để xây dựng dự án này:
