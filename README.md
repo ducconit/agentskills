@@ -3,6 +3,8 @@
 Chào mừng bạn đến với kho lưu trữ các kỹ năng (Skills) dành cho AI Agent. Dự án này tập trung vào việc cung cấp các bộ kỹ năng chuyên sâu, giúp nâng cao khả năng phân tích, thiết kế và xử lý mã nguồn của các Agent.
 
 ![Last Updated](https://img.shields.io/github/last-commit/ducconit/agentskills?label=Cập%20nhật%20lần%20cuối&style=flat-square)
+![NPM Version](https://img.shields.io/npm/v/@ducconit/agentskills?style=flat-square&color=cb3837)
+![NPM Downloads](https://img.shields.io/npm/dm/@ducconit/agentskills?style=flat-square)
 
 ## 🚀 Các kỹ năng hiện có
 
@@ -81,6 +83,10 @@ Dưới đây là những người đã đóng góp công sức để xây dựn
 <!-- readme: contributors -end -->
 
 *(Danh sách này được cập nhật tự động bởi GitHub Action)*
+
+## 📈 Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=ducconit/agentskills&type=Date)](https://star-history.com/#ducconit/agentskills&Date)
 
 ## ☕ Ủng hộ dự án (Donate)
 
