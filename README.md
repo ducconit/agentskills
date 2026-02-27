@@ -51,6 +51,19 @@ Nếu bạn đã tải script hoặc clone repo, hãy sử dụng:
 Dưới đây là những người đã đóng góp công sức để xây dựng dự án này:
 
 <!-- readme: contributors -start -->
+<table>
+	<tbody>
+		<tr>
+            <td align="center">
+                <a href="https://github.com/ducconit">
+                    <img src="https://avatars.githubusercontent.com/u/72369814?v=4" width="100;" alt="ducconit"/>
+                    <br />
+                    <sub><b>Duke</b></sub>
+                </a>
+            </td>
+		</tr>
+	<tbody>
+</table>
 <!-- readme: contributors -end -->
 
 *(Danh sách này được cập nhật tự động bởi GitHub Action)*
